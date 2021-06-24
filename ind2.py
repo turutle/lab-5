@@ -11,11 +11,11 @@ import sys
 
 if __name__ == '__main__':
     # Ввести список одной строкой.
-    Arr = list(map(int, input().split()))
+    Arr = list(map(int, input('Введите список одной строкой --> ').split()))
     # Проверить количество элементов списка.
     if len(Arr) != 10:
         print("Неверный размер списка", file=sys.stderr)
-        sys.exit(1)
+        sys.exit(None)
         
     # Найти искомое произведение
     mult = 1
@@ -23,21 +23,22 @@ if __name__ == '__main__':
             mult *= Arr[item]
     print(f"Произведение: {mult}")
     
-    # Найти сумму между первым и последним нулём
-    start = end = Arr.index(0)
     sum = 0
-    it = 9
-    while it >= 0:
-        if Arr[it] == 0:
-            end = it
-            break
-        it -= 1
-    for item in range(start, end):
-        sum += Arr[item]
-    print(f"Сумма: {sum}")
+    # Найти сумму между первым и последним нулём
+    if Arr.count('0') == 2:
+        start = end = Arr.index(0)
+        it = 9
+        while it >= 0:
+            if Arr[it] == 0:
+                end = it
+                break
+            it -= 1
+        for item in range(start, end):
+            sum += Arr[item]
     
+    print(f"Сумма между первым и последним нулём: {sum}")
+
     # Получить список со сначала положительными элементами
     Arr.sort()
     Arr.reverse()
     print(Arr)
-    
