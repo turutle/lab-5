@@ -14,7 +14,7 @@ if __name__ == '__main__':
     # Проверить количество элементов списка.
     if len(A) != 10:
         print("Неверный размер списка", file=sys.stderr)
-        sys.exit(1)
+        sys.exit("Process finished with exit code 1")
         
     # Найти искомую сумму.
     s = 0

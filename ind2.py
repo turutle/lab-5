@@ -15,7 +15,7 @@ if __name__ == '__main__':
     # Проверить количество элементов списка.
     if len(Arr) != 10:
         print("Неверный размер списка", file=sys.stderr)
-        sys.exit(None)
+        sys.exit("Process finished with exit code 1")
         
     # Найти искомое произведение
     mult = 1

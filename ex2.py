@@ -14,7 +14,7 @@ if __name__ == '__main__':
     # Если список пуст, завершить программу.
     if not a:
         print("Заданный список пуст", file=sys.stderr)
-        sys.exit(1)
+        sys.exit("Process finished with exit code 1")
         
     # Определить индексы минимального и максимального элементов.
     a_min = a_max = a[0]
